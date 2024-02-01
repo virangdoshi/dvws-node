@@ -3,7 +3,7 @@
 # dvws-node
 Damn Vulnerable Web Services is a vulnerable application with a web service and an API that can be used to learn about webservices/API related vulnerabilities.  This is a replacement for https://github.com/snoopysecurity/dvws
 
-![DVWS](https://snoopysecurity.github.io/assets/dvws.png)
+![DVWS](https://github.com/snoopysecurity/Public/blob/master/dvws/dvws.png)
 
 This vulnerable application contains the following API/Web Service vulnerabilities:
 
@@ -32,7 +32,7 @@ This vulnerable application contains the following API/Web Service vulnerabiliti
 * GraphQL Introspection Enabled
 * GraphQL Arbitrary File Write
 * GraphQL Batching Brute Force
-
+* Client Side Template Injection
 
 ## Set Up Instructions
 
@@ -41,9 +41,8 @@ This vulnerable application contains the following API/Web Service vulnerabiliti
 **Node and NPM is needed to run dvws-node**
 
 Tested on:
-* node v10.19.0
-* npm 6.13.7
-* mongodb 4.0.4
+* node v16.19.0
+* npm 8.19.3
 
 
 Set up a mongoDB environment to listen on port `27017`. Docker can be used to quickly set this up. 
@@ -55,7 +54,7 @@ docker run -d -p 27017-27019:27017-27019 --name dvws-mongo mongo:4.0.4
 Create a MySQL database which listens of port `3306` Docker can be used as follows
 
 ```
-docker run -p 3306:3306 --name dvws-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -d mysql:5.7
+docker run -p 3306:3306 --name dvws-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword -e MYSQL_DATABASE=dvws_sqldb -d mysql:8
 ```
 
 Git clone the DVWS Repository 
